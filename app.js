@@ -39,7 +39,7 @@ function renderTotals(data) {
     )
     .join("");
   document.getElementById("totals-note").textContent =
-    `${data.aois.length} zonas con producto de evaluación. La capa satelital solo digitaliza edificios afectados, no el parque completo.`;
+    "La capa satelital solo digitaliza edificios afectados, no el parque completo.";
   const d = new Date(data.meta.fetchedAt);
   document.getElementById("updated").textContent =
     `Datos extraídos el ${d.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}.`;
@@ -62,6 +62,117 @@ function renderAoiCards(data, onPick) {
     card.addEventListener("click", () => onPick(a.slug));
     grid.appendChild(card);
   }
+}
+
+// ---- Cobertura: regiones evaluadas vs pendientes ----
+async function renderCoverage() {
+  const el = document.getElementById("coverage");
+  if (!el) return;
+  try {
+    const act = await loadJSON("data/emsr884.json");
+    const pend = act.aois.filter((a) => a.status === "not_feasible").map((a) => a.name);
+    const done = act.totals.delivered;
+    const total = act.totals.aois;
+    el.innerHTML =
+      `<strong>${done} de ${total} zonas evaluadas.</strong> ` +
+      `Quedan <strong>${pend.length} sin evaluar</strong> por falta de imagen satelital útil: ` +
+      `<span class="pending">${pend.join(" · ")}</span>. Sus edificios aún no cuentan en las cifras.`;
+  } catch (e) {
+    console.warn(e.message);
+  }
+}
+
+// ---- Pestaña Personas ----
+function fmtVal(m) {
+  if (m.valueText) return m.valueText;
+  if (m.value == null) return "—";
+  return (m.approx ? "~" : "") + fmt(m.value);
+}
+
+function metricRow(m) {
+  return `<div class="metric ${m.highlight ? "hl" : ""}">
+    <div class="m-val">${fmtVal(m)}</div>
+    <div class="m-lab">${m.label}</div>
+    ${m.note ? `<div class="m-note">${m.note}</div>` : ""}
+  </div>`;
+}
+
+function renderPersonas(p) {
+  const root = document.getElementById("personas");
+  const off = p.official;
+  const ind = p.independent;
+  const tl = p.timeline;
+  const maxTl = Math.max(...tl.points.map((x) => x.value));
+
+  root.innerHTML = `
+    <p class="personas-lead">El gobierno confirma <strong>muertes</strong> contando solo hospitales.
+    Las fuentes independientes estiman <strong>desaparecidos</strong> en otro orden de magnitud.
+    La distancia entre ambas columnas es la medida real de la incertidumbre.</p>
+
+    <div class="compare">
+      <div class="col col-official">
+        <h3>${off.label}</h3>
+        <p class="col-src">${off.attribution}</p>
+        ${off.metrics.map(metricRow).join("")}
+      </div>
+      <div class="col col-independent">
+        <h3>${ind.label}</h3>
+        <p class="col-src">${ind.attribution}</p>
+        ${ind.metrics.map(metricRow).join("")}
+      </div>
+    </div>
+
+    <div class="gap-callout">
+      <span class="gap-num">${fmt(off.metrics[0].value)}</span>
+      <span class="gap-lab">muertes confirmadas oficialmente</span>
+      <span class="gap-vs">frente a</span>
+      <span class="gap-num gap-ind">~${fmt(ind.metrics[0].value)}</span>
+      <span class="gap-lab">desaparecidos según la ONU</span>
+    </div>
+
+    <section class="timeline">
+      <h2>// ${tl.label}</h2>
+      <div class="tl-bars">
+        ${tl.points
+          .map(
+            (pt) => `<div class="tl-bar">
+              <div class="tl-fill" style="height:${Math.round((pt.value / maxTl) * 100)}%"><span>${fmt(pt.value)}</span></div>
+              <div class="tl-date">${pt.date}</div>
+            </div>`
+          )
+          .join("")}
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p class="disclaimer">${p.meta.note} Última actualización de cifras: ${p.meta.updated}.</p>
+      <p class="next">Fuentes: ${p.sources
+        .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`)
+        .join(" · ")}</p>
+    </footer>`;
+}
+
+// ---- Pestañas ----
+function setupTabs(onShow) {
+  const tabs = document.querySelectorAll(".tab");
+  const activate = (name, updateHash = true) => {
+    let matched = false;
+    tabs.forEach((x) => {
+      const on = x.dataset.tab === name;
+      x.classList.toggle("is-active", on);
+      matched = matched || on;
+    });
+    if (!matched) return;
+    document.querySelectorAll(".panel").forEach((pn) => {
+      pn.classList.toggle("is-active", pn.id === `panel-${name}`);
+    });
+    if (updateHash) history.replaceState(null, "", `#${name}`);
+    onShow?.(name);
+  };
+  tabs.forEach((t) => t.addEventListener("click", () => activate(t.dataset.tab)));
+  // Deep-link inicial vía hash (#personas / #edificios)
+  const initial = location.hash.replace("#", "");
+  if (initial) activate(initial, false);
 }
 
 function renderLegend() {
@@ -242,10 +353,23 @@ function boundsOf(features) {
   const data = await loadJSON("data/damage-by-aoi.json");
   renderTotals(data);
   renderLegend();
+  renderCoverage();
+
+  // Pestaña Personas (carga en paralelo, no bloquea Edificios)
+  loadJSON("data/personas.json").then(renderPersonas).catch((e) => {
+    document.getElementById("personas").innerHTML =
+      `<p style="color:var(--destroyed)">No se pudieron cargar las cifras de personas: ${e.message}</p>`;
+  });
 
   // El mapa es best-effort: si WebGL falla, la página (contadores y tarjetas) sigue viva.
   let map = null;
   let ctx = null;
+
+  // Al volver a la pestaña Edificios, el mapa necesita recalcular tamaño.
+  setupTabs((name) => {
+    if (name === "edificios" && map) setTimeout(() => map.resize(), 50);
+  });
+
   renderAoiCards(data, (slug) => {
     const geo = ctx?.bySlug[slug];
     const b = geo && boundsOf(geo.features);
