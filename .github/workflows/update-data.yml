@@ -1,7 +1,8 @@
-name: Actualizar datos Copernicus
+name: Actualizar datos
 
-# Regenera los datos de la activación EMSR884 a diario y, si cambian, los
-# commitea. La integración Git de Vercel redesplega automáticamente al push.
+# A diario: regenera los datos de Copernicus (EMSR884) y, si hay ANTHROPIC_API_KEY,
+# refresca también las cifras de personas (Claude + web search + APIs de registros).
+# Si algo cambia, hace commit; la integración Git de Vercel redesplega sola.
 on:
   schedule:
     - cron: "0 6 * * *" # 06:00 UTC cada día
@@ -17,6 +18,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -24,8 +27,15 @@ jobs:
         with:
           node-version: 22
 
-      - name: Regenerar datos EMSR884
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Regenerar datos Copernicus (EMSR884)
         run: npm run fetch:all
+
+      - name: Actualizar cifras de personas (Claude + APIs)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: npm run update:personas
 
       - name: Commit y push si hay cambios
         run: |
@@ -33,9 +43,9 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           if git diff --cached --quiet; then
-            echo "Sin cambios en los datos de Copernicus."
+            echo "Sin cambios en los datos."
           else
-            git commit -m "Datos: actualización automática EMSR884 ($(date -u +%F))"
+            git commit -m "Datos: actualización automática ($(date -u +%F))"
             git push
             echo "Datos actualizados y enviados; Vercel redesplegará."
           fi

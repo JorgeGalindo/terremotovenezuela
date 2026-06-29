@@ -21,9 +21,14 @@ npm run fetch:buildings    # solo daño edificio a edificio + geojson
 ```
 
 ### Actualización automática
-La activación EMSR884 está abierta y se actualiza por versiones de monitoreo. Un **cron diario en GitHub Actions** ([`.github/workflows/update-data.yml`](.github/workflows/update-data.yml)) ejecuta `fetch:all`, y si los datos cambian hace commit; la integración Git de Vercel **redesplega solo**. No depende de ninguna máquina local.
+Un **cron diario en GitHub Actions** ([`.github/workflows/update-data.yml`](.github/workflows/update-data.yml), 06:00 UTC) refresca todo y, si algo cambia, hace commit; la integración Git de Vercel **redesplega solo**. No depende de ninguna máquina local. Dos capas:
 
-> Las cifras de **personas** (`data/personas.json`: muertes oficiales, ONU, registros ciudadanos) se actualizan a mano porque provienen de prensa y plataformas heterogéneas. SOS Venezuela 2026 sí tiene API y podría automatizarse aparte.
+1. **Copernicus (determinista)** — `npm run fetch:all` regenera la activación EMSR884 y el daño por edificio desde el backend público.
+2. **Personas** — `npm run update:personas` ([`scripts/update-personas.mjs`](scripts/update-personas.mjs)):
+   - **API determinista** donde existe: Desaparecidos Venezuela (`/api/stats`).
+   - **Claude Opus 4.8 + web_search** para el resto (muertes oficiales, heridos, desplazados, desaparecidos ONU/prensa, y los titulares de SOS Venezuela 2026 / Desaparecidos Terremoto Venezuela / Venezuela Te Busca). Devuelve JSON estricto que se parchea sobre `data/personas.json` sin tocar su estructura; si falla, deja el fichero intacto.
+
+> **Requisito:** añadir el secret **`ANTHROPIC_API_KEY`** en GitHub (Settings → Secrets and variables → Actions). Sin él, el paso de personas se omite y solo corre la capa de Copernicus.
 
 ## Stack
 Sitio **estático** (HTML/CSS/JS vanilla + **MapLibre GL** vía CDN + **OpenFreeMap**, sin API key), desplegado en **Vercel**. Mismo patrón que `tresmillonesweb`/`juanysabela`. Sin build step. Deploy: `vercel --prod`.
