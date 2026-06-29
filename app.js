@@ -2,9 +2,9 @@
 // y pinta contadores + mapa de edificios coloreados por grado de daño.
 
 const GRADE_COLORS = {
-  Destroyed: "#b2182b",
-  Damaged: "#f46d43",
-  "Possibly damaged": "#fdae61",
+  Destroyed: "#ff4d2e",
+  Damaged: "#ff9233",
+  "Possibly damaged": "#ffce5c",
 };
 const GRADE_LABEL = {
   Destroyed: "Destruidos",
@@ -74,10 +74,68 @@ function renderLegend() {
 }
 
 // ---- Mapa (MapLibre GL + OpenFreeMap, sin API key) ----
+// Estilo propio: "mundo marrón" oscuro y cálido.
+const MAP = {
+  land: "#241810",
+  water: "#120c08",
+  park: "#2b1d12",
+  roadMinor: "#3a281a",
+  roadMajor: "#553a24",
+  boundary: "#4a3320",
+  label: "#b89a78",
+  labelHalo: "#120c08",
+};
+
+function darkBrownStyle() {
+  return {
+    version: 8,
+    name: "terremoto-marron",
+    glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+    sources: {
+      ofm: { type: "vector", url: "https://tiles.openfreemap.org/planet" },
+    },
+    layers: [
+      { id: "bg", type: "background", paint: { "background-color": MAP.land } },
+      { id: "water", source: "ofm", "source-layer": "water", type: "fill", paint: { "fill-color": MAP.water } },
+      {
+        id: "park", source: "ofm", "source-layer": "landcover", type: "fill",
+        filter: ["in", "class", "wood", "grass", "park"],
+        paint: { "fill-color": MAP.park, "fill-opacity": 0.6 },
+      },
+      {
+        id: "roads-minor", source: "ofm", "source-layer": "transportation", type: "line",
+        filter: ["in", "class", "minor", "service", "track", "tertiary"], minzoom: 11,
+        paint: { "line-color": MAP.roadMinor, "line-width": ["interpolate", ["linear"], ["zoom"], 11, 0.4, 16, 2] },
+      },
+      {
+        id: "roads-major", source: "ofm", "source-layer": "transportation", type: "line",
+        filter: ["in", "class", "primary", "secondary", "trunk", "motorway"], minzoom: 7,
+        paint: { "line-color": MAP.roadMajor, "line-width": ["interpolate", ["linear"], ["zoom"], 7, 0.5, 16, 3] },
+      },
+      {
+        id: "boundary", source: "ofm", "source-layer": "boundary", type: "line",
+        filter: ["<=", "admin_level", 4],
+        paint: { "line-color": MAP.boundary, "line-width": 0.7, "line-dasharray": [2, 2] },
+      },
+      {
+        id: "place-labels", source: "ofm", "source-layer": "place", type: "symbol",
+        filter: ["in", "class", "city", "town"], minzoom: 5,
+        layout: {
+          "text-field": ["get", "name"],
+          "text-font": ["Noto Sans Regular"],
+          "text-size": ["interpolate", ["linear"], ["zoom"], 5, 10, 12, 15],
+          "text-transform": "uppercase", "text-letter-spacing": 0.08,
+        },
+        paint: { "text-color": MAP.label, "text-halo-color": MAP.labelHalo, "text-halo-width": 1.4 },
+      },
+    ],
+  };
+}
+
 function initMap() {
   return new maplibregl.Map({
     container: "map",
-    style: "https://tiles.openfreemap.org/styles/positron",
+    style: darkBrownStyle(),
     center: [-67.6, 10.4],
     zoom: 6.4,
     attributionControl: { compact: true },
@@ -117,7 +175,7 @@ async function addBuildings(map, data) {
     type: "fill",
     source: "buildings",
     filter: ["==", ["geometry-type"], "Polygon"],
-    paint: { "fill-color": colorExpr, "fill-opacity": 0.75, "fill-outline-color": "#00000033" },
+    paint: { "fill-color": colorExpr, "fill-opacity": 0.9, "fill-outline-color": "#1a120c" },
   });
   map.addLayer({
     id: "buildings-pt",
