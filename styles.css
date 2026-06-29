@@ -238,6 +238,26 @@ body {
 .gap-lab { font-size: 0.8rem; color: var(--muted); flex-basis: 100%; margin-top: -4px; }
 .gap-vs { flex-basis: 100%; font-size: 0.75rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.1em; }
 
+/* Registros ciudadanos */
+.registries { margin: 48px 0 0; }
+.registries h2 { font-size: 0.95rem; color: var(--damaged); font-weight: 600; margin: 0 0 6px; }
+.reg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 18px; }
+.reg-card {
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  border-radius: 6px;
+  padding: 18px;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: border-color 0.15s, transform 0.1s, background 0.15s;
+}
+.reg-card:hover { border-color: var(--destroyed); background: var(--panel); transform: translateY(-2px); }
+.reg-val { font-size: 1.7rem; font-weight: 700; line-height: 1; color: var(--destroyed); letter-spacing: -0.02em; }
+.reg-sub { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+.reg-name { font-size: 0.82rem; font-weight: 600; margin-top: 14px; color: var(--ink); }
+.reg-detail { font-size: 0.72rem; font-weight: 300; color: var(--faint); margin-top: 6px; line-height: 1.4; }
+
 /* Timeline muertes oficiales */
 .timeline { margin: 48px 0 0; }
 .timeline h2 { font-size: 0.95rem; color: var(--damaged); font-weight: 600; margin: 0 0 24px; }
@@ -254,6 +274,21 @@ body {
 }
 .tl-fill span { position: absolute; top: -20px; font-size: 0.72rem; font-weight: 600; color: var(--ink); }
 .tl-date { font-size: 0.66rem; color: var(--muted); margin-top: 8px; text-align: center; }
+
+/* ---- Crédito global ---- */
+.credit {
+  max-width: 920px;
+  margin: 40px auto 64px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--faint);
+}
+.credit p { margin: 4px 0; }
+.credit strong { color: var(--muted); font-weight: 600; }
+.credit a { color: var(--damaged); }
+.credit-sub { font-size: 0.72rem; }
 
 /* ---- MapLibre overrides (dark) ---- */
 .maplibregl-popup-content {

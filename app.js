@@ -97,6 +97,24 @@ function metricRow(m) {
   </div>`;
 }
 
+function renderRegistries(r) {
+  const cards = r.items
+    .map(
+      (it) => `<a class="reg-card" href="${it.url}" target="_blank" rel="noopener">
+        <div class="reg-val">${fmtVal(it)}</div>
+        <div class="reg-sub">${it.label}${it.date ? ` · ${it.date}` : ""}</div>
+        <div class="reg-name">${it.name} ↗</div>
+        ${it.detail ? `<div class="reg-detail">${it.detail}</div>` : ""}
+      </a>`
+    )
+    .join("");
+  return `<section class="registries">
+    <h2>// ${r.label}</h2>
+    <p class="aois-intro">${r.note}</p>
+    <div class="reg-grid">${cards}</div>
+  </section>`;
+}
+
 function renderPersonas(p) {
   const root = document.getElementById("personas");
   const off = p.official;
@@ -129,6 +147,8 @@ function renderPersonas(p) {
       <span class="gap-num gap-ind">~${fmt(ind.metrics[0].value)}</span>
       <span class="gap-lab">desaparecidos según la ONU</span>
     </div>
+
+    ${p.registries ? renderRegistries(p.registries) : ""}
 
     <section class="timeline">
       <h2>// ${tl.label}</h2>

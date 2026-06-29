@@ -20,9 +20,18 @@
     "attribution": "Tom Fletcher (jefe humanitario de la ONU) · 27-jun-2026, y web ciudadana de personas no localizadas.",
     "metrics": [
       { "key": "missing_un", "label": "Desaparecidos (ONU)", "value": 50000, "approx": true, "highlight": true, "note": "Tom Fletcher: una estimación de 50.000 sigue siendo «terroríficamente plausible» (bajó de 55.000 el día anterior)." },
-      { "key": "missing_tracker", "label": "No localizados (registro ciudadano)", "value": 46628, "approx": true, "note": "Rango reportado entre ~46.600 y 68.900 según el día." },
+      { "key": "missing_media", "label": "Desaparecidos (prensa)", "value": 68000, "approx": true, "note": "Euronews, 28-jun: más de 68.000 personas seguían sin localizar." },
       { "key": "affected", "label": "Población afectada (ONU)", "value": 6760000, "approx": true, "note": "Hasta 6,76 millones de personas potencialmente afectadas (OCHA)." },
       { "key": "loss", "label": "Daño económico (ONU)", "valueText": "4.700–8.700 M$", "note": "Aproximadamente 4–8 % del PIB de Venezuela." }
+    ]
+  },
+  "registries": {
+    "label": "Registros ciudadanos de desaparecidos",
+    "note": "Plataformas creadas por voluntarios, sin supervisión oficial. No requieren cuenta y permiten reportes ilimitados, por lo que las cifras pueden incluir duplicados o casos ya resueltos. Aun así, son hoy la fuente más detallada de personas no localizadas.",
+    "items": [
+      { "name": "Desaparecidos Terremoto Venezuela", "url": "https://desaparecidosterremotovenezuela.com/", "value": 37380, "label": "sin contacto", "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.", "date": "26-jun" },
+      { "name": "Venezuela Te Busca", "url": "https://venezuelatebusca.com/", "value": 20000, "approx": true, "label": "reportes recibidos", "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.", "date": "27-jun" },
+      { "name": "SOS Venezuela 2026", "url": "https://sosvenezuela2026.com/", "valueText": "Mapa en vivo", "label": "daños y desaparecidos", "detail": "Mapa colaborativo de daños, puntos de apoyo y personas buscadas.", "date": "" }
     ]
   },
   "timeline": {
@@ -37,8 +46,9 @@
   },
   "sources": [
     { "name": "ONU — Tom Fletcher / OCHA", "url": "https://news.un.org/en/story/2026/06/1167829" },
+    { "name": "Euronews — 68.000 desaparecidos", "url": "https://www.euronews.com/2026/06/28/more-than-68000-people-still-missing-in-venezuela-after-devastating-earthquakes" },
+    { "name": "CNN — plataformas de búsqueda", "url": "https://cnnespanol.cnn.com/2026/06/25/venezuela/terremoto-plataformas-buscar-desaparecidos-orix" },
     { "name": "Wikipedia — 2026 Venezuela earthquakes", "url": "https://en.wikipedia.org/wiki/2026_Venezuela_earthquakes" },
-    { "name": "El Español — cifra oficial de muertos", "url": "https://www.elespanol.com/mundo/america/20260625/ultima-hora-terremotos-venezuela-informa-muertos-heridos/1003744299146_10.html" },
     { "name": "Univision — actualizaciones diarias", "url": "https://www.univision.com/noticias/america-latina/sismos-venezuela-ultimas-noticias-terremotos-actualizaciones-hoy-viernes-27-junio-2026" }
   ]
 }
