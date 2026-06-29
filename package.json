@@ -8,6 +8,7 @@
     "dev": "python3 -m http.server 5175",
     "fetch:copernicus": "node scripts/fetch-emsr884.mjs",
     "fetch:buildings": "node scripts/fetch-buildings.mjs",
-    "fetch:all": "npm run fetch:copernicus && npm run fetch:buildings"
+    "fetch:all": "npm run fetch:copernicus && npm run fetch:buildings",
+    "og": "'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --window-size=1200,630 --virtual-time-budget=4000 --screenshot=og.png \"file://$PWD/scripts/og-template.html\""
   }
 }

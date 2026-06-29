@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; }
+    body {
+      font-family: "Roboto Mono", monospace;
+      background: #1a120c;
+      color: #f0e2cf;
+      padding: 64px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .grain { position: absolute; inset: 0; background:
+      radial-gradient(1200px 400px at 90% -10%, rgba(255,77,46,0.12), transparent 60%); }
+    .kicker { color: #ff9233; font-size: 22px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+    h1 { font-size: 92px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; margin-top: 18px; }
+    .sub { color: #b89a78; font-size: 26px; font-weight: 300; margin-top: 20px; }
+    .stats { display: flex; gap: 56px; margin-top: auto; }
+    .stat .num { font-size: 64px; font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+    .stat .lab { font-size: 20px; color: #b89a78; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 10px; }
+    .s1 .num { color: #ff4d2e; }
+    .s2 .num { color: #f0e2cf; }
+    .s3 .num { color: #ff9233; }
+    .foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: 40px; border-top: 1px solid #3d2a1b; padding-top: 22px; }
+    .foot .url { color: #f0e2cf; font-size: 24px; font-weight: 600; }
+    .foot .src { color: #7c6043; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div>
+    <div class="kicker">// Copernicus EMS · Activación EMSR884</div>
+    <h1>Terremoto de Venezuela</h1>
+    <div class="sub">La afectación del sismo del 24-jun-2026, cuantificada con datos satelitales.</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat s1"><div class="num">1.306</div><div class="lab">Edificios afectados</div></div>
+    <div class="stat s2"><div class="num">1.450</div><div class="lab">Muertes (oficial)</div></div>
+    <div class="stat s3"><div class="num">~50.000</div><div class="lab">Desaparecidos (ONU)</div></div>
+  </div>
+
+  <div class="foot">
+    <span class="url">terremotovenezuela.vercel.app</span>
+    <span class="src">Copernicus EMS · ONU/OCHA · registros ciudadanos</span>
+  </div>
+</body>
+</html>
