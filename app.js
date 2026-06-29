@@ -14,6 +14,20 @@ const GRADE_LABEL = {
 
 const fmt = (n) => n.toLocaleString("es-ES");
 
+// "Actualizado · DD mmm YYYY" en el header, usando la fecha de dato más reciente.
+let _updatedMax = "";
+function setUpdated(dateStr) {
+  if (!dateStr) return;
+  const iso = dateStr.slice(0, 10);
+  if (iso <= _updatedMax) return;
+  _updatedMax = iso;
+  const el = document.getElementById("updated-sub");
+  if (el) {
+    const fmtd = new Date(iso).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+    el.textContent = `Actualizado · ${fmtd}`;
+  }
+}
+
 async function loadJSON(url) {
   const r = await fetch(url);
   if (!r.ok) throw new Error(`No se pudo cargar ${url} (${r.status})`);
@@ -97,22 +111,23 @@ function metricRow(m) {
   </div>`;
 }
 
+// Bloque de registros ciudadanos — vive DENTRO de la columna independiente,
+// distinguido visualmente pero sin desacoplar de las estimaciones.
 function renderRegistries(r) {
-  const cards = r.items
+  const rows = r.items
     .map(
-      (it) => `<a class="reg-card" href="${it.url}" target="_blank" rel="noopener">
-        <div class="reg-val">${fmtVal(it)}</div>
-        <div class="reg-sub">${it.label}${it.date ? ` · ${it.date}` : ""}</div>
+      (it) => `<a class="reg-row" href="${it.url}" target="_blank" rel="noopener">
+        <div class="reg-head"><span class="reg-val">${fmtVal(it)}</span><span class="reg-sub">${it.label}${it.date ? ` · ${it.date}` : ""}</span></div>
         <div class="reg-name">${it.name} ↗</div>
         ${it.detail ? `<div class="reg-detail">${it.detail}</div>` : ""}
       </a>`
     )
     .join("");
-  return `<section class="registries">
-    <h2>// ${r.label}</h2>
-    <p class="aois-intro">${r.note}</p>
-    <div class="reg-grid">${cards}</div>
-  </section>`;
+  return `<div class="reg-block">
+    <h4>Registros ciudadanos</h4>
+    <p class="reg-note">${r.note}</p>
+    ${rows}
+  </div>`;
 }
 
 function renderPersonas(p) {
@@ -137,18 +152,9 @@ function renderPersonas(p) {
         <h3>${ind.label}</h3>
         <p class="col-src">${ind.attribution}</p>
         ${ind.metrics.map(metricRow).join("")}
+        ${p.registries ? renderRegistries(p.registries) : ""}
       </div>
     </div>
-
-    <div class="gap-callout">
-      <span class="gap-num">${fmt(off.metrics[0].value)}</span>
-      <span class="gap-lab">muertes confirmadas oficialmente</span>
-      <span class="gap-vs">frente a</span>
-      <span class="gap-num gap-ind">~${fmt(ind.metrics[0].value)}</span>
-      <span class="gap-lab">desaparecidos según la ONU</span>
-    </div>
-
-    ${p.registries ? renderRegistries(p.registries) : ""}
 
     <section class="timeline">
       <h2>// ${tl.label}</h2>
@@ -165,7 +171,6 @@ function renderPersonas(p) {
     </section>
 
     <footer class="foot">
-      <p class="disclaimer">${p.meta.note} Última actualización de cifras: ${p.meta.updated}.</p>
       <p class="next">Fuentes: ${p.sources
         .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`)
         .join(" · ")}</p>
@@ -374,9 +379,12 @@ function boundsOf(features) {
   renderTotals(data);
   renderLegend();
   renderCoverage();
+  setUpdated(data.meta.fetchedAt);
 
   // Pestaña Personas (carga en paralelo, no bloquea Edificios)
-  loadJSON("data/personas.json").then(renderPersonas).catch((e) => {
+  loadJSON("data/personas.json")
+    .then((p) => { renderPersonas(p); setUpdated(p.meta.updated); })
+    .catch((e) => {
     document.getElementById("personas").innerHTML =
       `<p style="color:var(--destroyed)">No se pudieron cargar las cifras de personas: ${e.message}</p>`;
   });
