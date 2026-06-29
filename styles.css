@@ -46,6 +46,13 @@ body {
   margin: 0 0 18px;
   letter-spacing: -0.02em;
 }
+.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-weight: 300;
+  color: var(--damaged);
+  margin: 6px 0 0;
+  letter-spacing: 0.02em;
+}
 .updated-sub {
   font-size: 0.78rem;
   font-weight: 300;
@@ -276,6 +283,27 @@ body {
 }
 .tl-fill span { position: absolute; top: -20px; font-size: 0.72rem; font-weight: 600; color: var(--ink); }
 .tl-date { font-size: 0.66rem; color: var(--muted); margin-top: 8px; text-align: center; }
+
+/* Estimación PAGER (USGS) — referencia estadística, estilo distinto al recuento */
+.pager { margin: 40px 0 0; padding-top: 28px; border-top: 1px dashed var(--faint); }
+.pager h2 { font-size: 0.95rem; color: var(--possibly); font-weight: 600; margin: 0 0 6px; }
+.pg-alert { font-weight: 400; color: var(--destroyed); text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.05em; }
+.pager-intro { font-size: 0.8rem; font-weight: 300; color: var(--muted); margin: 0 0 22px; max-width: 620px; }
+.pg-bars { display: flex; align-items: flex-end; gap: 12px; height: 170px; }
+.pg-bar { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+.pg-fill {
+  width: 100%;
+  background: repeating-linear-gradient(45deg, var(--possibly), var(--possibly) 6px, #d9a93f 6px, #d9a93f 12px);
+  border-radius: 3px 3px 0 0;
+  position: relative;
+  min-height: 18px;
+  display: flex;
+  justify-content: center;
+}
+.pg-fill span { position: absolute; top: -19px; font-size: 0.72rem; font-weight: 600; color: var(--ink); }
+.pg-lab { font-size: 0.64rem; color: var(--muted); margin-top: 8px; text-align: center; }
+.pg-note { font-size: 0.72rem; font-weight: 300; color: var(--faint); margin-top: 16px; line-height: 1.45; }
+.pg-note a { color: var(--possibly); }
 
 /* Contexto discreto bajo la gráfica */
 .ctx {

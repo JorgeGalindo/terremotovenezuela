@@ -179,11 +179,34 @@ function renderPersonas(p) {
       }
     </section>
 
+    <div id="pager"></div>
+
     <footer class="foot">
       <p class="next">Fuentes: ${p.sources
         .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`)
         .join(" · ")}</p>
     </footer>`;
+}
+
+// Estimación estadística de víctimas del USGS (PAGER) — referencia, no recuento.
+function renderPager(g) {
+  const el = document.getElementById("pager");
+  if (!el) return;
+  const max = Math.max(...g.bins.map((b) => b.pct));
+  const bars = g.bins
+    .map(
+      (b) => `<div class="pg-bar">
+        <div class="pg-fill" style="height:${Math.round((b.pct / max) * 100)}%"><span>${b.pct}%</span></div>
+        <div class="pg-lab">${b.label}</div>
+      </div>`
+    )
+    .join("");
+  el.innerHTML = `<section class="pager">
+    <h2>// Estimación estadística de víctimas <span class="pg-alert">${g.source} · alerta ${g.alert}</span></h2>
+    <p class="pager-intro">Probabilidad por orden de magnitud de muertes (${g.event}). No es un recuento: es lo que el modelo del USGS espera dada la magnitud y la población expuesta.</p>
+    <div class="pg-bars">${bars}</div>
+    <p class="pg-note">${g.note} <a href="${g.url}" target="_blank" rel="noopener">Ver en USGS ↗</a></p>
+  </section>`;
 }
 
 // ---- Pestañas ----
@@ -392,7 +415,11 @@ function boundsOf(features) {
 
   // Pestaña Personas (carga en paralelo, no bloquea Edificios)
   loadJSON("data/personas.json")
-    .then((p) => { renderPersonas(p); setUpdated(p.meta.updated); })
+    .then((p) => {
+      renderPersonas(p);
+      setUpdated(p.meta.updated);
+      loadJSON("data/pager.json").then(renderPager).catch((e) => console.warn(e.message));
+    })
     .catch((e) => {
     document.getElementById("personas").innerHTML =
       `<p style="color:var(--destroyed)">No se pudieron cargar las cifras de personas: ${e.message}</p>`;
