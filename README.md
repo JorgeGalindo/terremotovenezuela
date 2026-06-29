@@ -15,9 +15,15 @@ Microsite que **cuantifica la afectación del terremoto de Venezuela** (24-jun-2
 
 ## Datos
 ```bash
-npm run fetch:copernicus   # regenera data/emsr884.json desde el backend público
+npm run fetch:all          # regenera datos de Copernicus (activación + edificios)
+npm run fetch:copernicus   # solo data/emsr884.json
+npm run fetch:buildings    # solo daño edificio a edificio + geojson
 ```
-La activación está abierta y se actualiza por versiones de monitoreo → conviene un chequeo **diario**.
+
+### Actualización automática
+La activación EMSR884 está abierta y se actualiza por versiones de monitoreo. Un **cron diario en GitHub Actions** ([`.github/workflows/update-data.yml`](.github/workflows/update-data.yml)) ejecuta `fetch:all`, y si los datos cambian hace commit; la integración Git de Vercel **redesplega solo**. No depende de ninguna máquina local.
+
+> Las cifras de **personas** (`data/personas.json`: muertes oficiales, ONU, registros ciudadanos) se actualizan a mano porque provienen de prensa y plataformas heterogéneas. SOS Venezuela 2026 sí tiene API y podría automatizarse aparte.
 
 ## Stack
 Sitio **estático** (HTML/CSS/JS vanilla + **MapLibre GL** vía CDN + **OpenFreeMap**, sin API key), desplegado en **Vercel**. Mismo patrón que `tresmillonesweb`/`juanysabela`. Sin build step. Deploy: `vercel --prod`.
