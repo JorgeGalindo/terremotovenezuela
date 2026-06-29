@@ -139,8 +139,7 @@ function renderPersonas(p) {
 
   root.innerHTML = `
     <p class="personas-lead">El gobierno confirma <strong>muertes</strong> contando solo hospitales.
-    Las fuentes independientes estiman <strong>desaparecidos</strong> en otro orden de magnitud.
-    La distancia entre ambas columnas es la medida real de la incertidumbre.</p>
+    Las fuentes independientes estiman <strong>desaparecidos</strong> en otro orden de magnitud.</p>
 
     <div class="compare">
       <div class="col col-official">
@@ -168,6 +167,16 @@ function renderPersonas(p) {
           )
           .join("")}
       </div>
+      ${
+        p.context
+          ? `<div class="ctx">${p.context.items
+              .map(
+                (c) =>
+                  `<span class="ctx-item"><strong>${c.valueText}</strong> ${c.label}${c.note ? ` <span class="ctx-note">${c.note}</span>` : ""}</span>`
+              )
+              .join("")}<span class="ctx-src">${p.context.label}</span></div>`
+          : ""
+      }
     </section>
 
     <footer class="foot">

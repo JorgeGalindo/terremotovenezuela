@@ -277,6 +277,22 @@ body {
 .tl-fill span { position: absolute; top: -20px; font-size: 0.72rem; font-weight: 600; color: var(--ink); }
 .tl-date { font-size: 0.66rem; color: var(--muted); margin-top: 8px; text-align: center; }
 
+/* Contexto discreto bajo la gráfica */
+.ctx {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 24px;
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+.ctx-item strong { color: var(--ink); font-weight: 600; }
+.ctx-note { color: var(--faint); font-weight: 300; }
+.ctx-src { margin-left: auto; font-size: 0.66rem; color: var(--faint); text-transform: uppercase; letter-spacing: 0.05em; }
+
 /* ---- Crédito global ---- */
 .credit {
   max-width: 920px;

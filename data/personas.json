@@ -20,9 +20,7 @@
     "attribution": "Tom Fletcher (jefe humanitario de la ONU) · 27-jun-2026, y web ciudadana de personas no localizadas.",
     "metrics": [
       { "key": "missing_un", "label": "Desaparecidos (ONU)", "value": 50000, "approx": true, "highlight": true, "note": "Tom Fletcher: una estimación de 50.000 sigue siendo «terroríficamente plausible» (bajó de 55.000 el día anterior)." },
-      { "key": "missing_media", "label": "Desaparecidos (prensa)", "value": 68000, "approx": true, "note": "Euronews, 28-jun: más de 68.000 personas seguían sin localizar." },
-      { "key": "affected", "label": "Población afectada (ONU)", "value": 6760000, "approx": true, "note": "Hasta 6,76 millones de personas potencialmente afectadas (OCHA)." },
-      { "key": "loss", "label": "Daño económico (ONU)", "valueText": "4.700–8.700 M$", "note": "Aproximadamente 4–8 % del PIB de Venezuela." }
+      { "key": "missing_media", "label": "Desaparecidos (Euronews)", "value": 68000, "approx": true, "note": "Euronews, 28-jun-2026: más de 68.000 personas seguían sin localizar." }
     ]
   },
   "registries": {
@@ -31,7 +29,14 @@
     "items": [
       { "name": "Desaparecidos Terremoto Venezuela", "url": "https://desaparecidosterremotovenezuela.com/", "value": 37380, "label": "sin contacto", "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.", "date": "26-jun" },
       { "name": "Venezuela Te Busca", "url": "https://venezuelatebusca.com/", "value": 20000, "approx": true, "label": "reportes recibidos", "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.", "date": "27-jun" },
-      { "name": "SOS Venezuela 2026", "url": "https://sosvenezuela2026.com/", "valueText": "Mapa en vivo", "label": "daños y desaparecidos", "detail": "Mapa colaborativo de daños, puntos de apoyo y personas buscadas.", "date": "" }
+      { "name": "Desaparecidos Venezuela", "url": "https://www.desaparecidosvenezuela.com/", "value": 1316, "label": "aún buscados", "detail": "1.345 publicaciones · 29 localizados · 21 a salvo.", "date": "28-jun" }
+    ]
+  },
+  "context": {
+    "label": "Contexto (ONU/OCHA)",
+    "items": [
+      { "label": "Población afectada", "valueText": "hasta 6,76 M", "note": "personas potencialmente afectadas (OCHA)." },
+      { "label": "Daño económico", "valueText": "4.700–8.700 M$", "note": "≈ 4–8 % del PIB de Venezuela." }
     ]
   },
   "timeline": {
