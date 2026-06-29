@@ -27,6 +27,7 @@
     "label": "Registros ciudadanos de desaparecidos",
     "note": "Plataformas creadas por voluntarios, sin supervisión oficial. No requieren cuenta y permiten reportes ilimitados, por lo que las cifras pueden incluir duplicados o casos ya resueltos. Aun así, son hoy la fuente más detallada de personas no localizadas.",
     "items": [
+      { "name": "SOS Venezuela 2026", "url": "https://sosvenezuela2026.com/buscar", "value": 43945, "label": "desaparecidos", "detail": "8.414 ya encontrados. Mapa colaborativo y directorio de personas.", "date": "29-jun" },
       { "name": "Desaparecidos Terremoto Venezuela", "url": "https://desaparecidosterremotovenezuela.com/", "value": 37380, "label": "sin contacto", "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.", "date": "26-jun" },
       { "name": "Venezuela Te Busca", "url": "https://venezuelatebusca.com/", "value": 20000, "approx": true, "label": "reportes recibidos", "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.", "date": "27-jun" },
       { "name": "Desaparecidos Venezuela", "url": "https://www.desaparecidosvenezuela.com/", "value": 1316, "label": "aún buscados", "detail": "1.345 publicaciones · 29 localizados · 21 a salvo.", "date": "28-jun" }
