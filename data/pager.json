@@ -3,6 +3,8 @@
   "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000t7zp/pager",
   "alert": "red",
   "event": "M 7,5 — Yumare, Venezuela",
+  "median": 23447,
+  "medianLabel": "≈ 23.000 muertes",
   "note": "Estimación estadística del USGS (modelo PAGER) basada en la magnitud, la profundidad y la población expuesta — NO es un recuento. Da el orden de magnitud probable de víctimas mortales, no una cifra. Alerta roja.",
   "bins": [
     { "label": "100–1.000", "pct": 5 },

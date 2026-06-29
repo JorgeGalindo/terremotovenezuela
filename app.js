@@ -130,12 +130,34 @@ function renderRegistries(r) {
   </div>`;
 }
 
+// Gráfica de LÍNEA para la evolución de la cifra contada (distinta de las barras de estimación).
+function lineChart(points) {
+  const W = 640, H = 210, padX = 44, padTop = 26, padBot = 40;
+  const max = Math.max(...points.map((p) => p.value));
+  const n = points.length;
+  const x = (i) => padX + (i * (W - 2 * padX)) / Math.max(1, n - 1);
+  const y = (v) => padTop + (1 - v / max) * (H - padTop - padBot);
+  const line = points.map((p, i) => `${x(i).toFixed(1)},${y(p.value).toFixed(1)}`).join(" ");
+  const area = `${padX},${y(0)} ${line} ${x(n - 1).toFixed(1)},${y(0)}`;
+  const nodes = points
+    .map(
+      (p, i) => `<circle cx="${x(i).toFixed(1)}" cy="${y(p.value).toFixed(1)}" r="4" class="ln-dot"/>
+        <text x="${x(i).toFixed(1)}" y="${(y(p.value) - 11).toFixed(1)}" class="ln-val">${fmt(p.value)}</text>
+        <text x="${x(i).toFixed(1)}" y="${H - 12}" class="ln-date">${p.date}</text>`
+    )
+    .join("");
+  return `<svg viewBox="0 0 ${W} ${H}" class="linechart" preserveAspectRatio="xMidYMid meet" role="img">
+    <polygon points="${area}" class="ln-area"/>
+    <polyline points="${line}" class="ln-line"/>
+    ${nodes}
+  </svg>`;
+}
+
 function renderPersonas(p) {
   const root = document.getElementById("personas");
   const off = p.official;
   const ind = p.independent;
   const tl = p.timeline;
-  const maxTl = Math.max(...tl.points.map((x) => x.value));
 
   root.innerHTML = `
     <p class="personas-lead">El gobierno confirma <strong>muertes</strong> contando solo hospitales.
@@ -152,21 +174,13 @@ function renderPersonas(p) {
         <p class="col-src">${ind.attribution}</p>
         ${ind.metrics.map(metricRow).join("")}
         ${p.registries ? renderRegistries(p.registries) : ""}
+        <div id="pager"></div>
       </div>
     </div>
 
     <section class="timeline">
       <h2>// ${tl.label}</h2>
-      <div class="tl-bars">
-        ${tl.points
-          .map(
-            (pt) => `<div class="tl-bar">
-              <div class="tl-fill" style="height:${Math.round((pt.value / maxTl) * 100)}%"><span>${fmt(pt.value)}</span></div>
-              <div class="tl-date">${pt.date}</div>
-            </div>`
-          )
-          .join("")}
-      </div>
+      ${lineChart(tl.points)}
       ${
         p.context
           ? `<div class="ctx">${p.context.items
@@ -179,8 +193,6 @@ function renderPersonas(p) {
       }
     </section>
 
-    <div id="pager"></div>
-
     <footer class="foot">
       <p class="next">Fuentes: ${p.sources
         .map((s) => `<a href="${s.url}" target="_blank" rel="noopener">${s.name}</a>`)
@@ -188,7 +200,8 @@ function renderPersonas(p) {
     </footer>`;
 }
 
-// Estimación estadística de víctimas del USGS (PAGER) — referencia, no recuento.
+// Estimación estadística de víctimas del USGS (PAGER) — vive DENTRO de la columna
+// de estimaciones independientes. Barras (probabilidad por orden de magnitud) + mediana.
 function renderPager(g) {
   const el = document.getElementById("pager");
   if (!el) return;
@@ -201,12 +214,13 @@ function renderPager(g) {
       </div>`
     )
     .join("");
-  el.innerHTML = `<section class="pager">
-    <h2>// Estimación estadística de víctimas <span class="pg-alert">${g.source} · alerta ${g.alert}</span></h2>
-    <p class="pager-intro">Probabilidad por orden de magnitud de muertes (${g.event}). No es un recuento: es lo que el modelo del USGS espera dada la magnitud y la población expuesta.</p>
+  el.innerHTML = `<div class="pager">
+    <h4>Estimación estadística (USGS PAGER) <span class="pg-alert">alerta ${g.alert}</span></h4>
+    ${g.medianLabel ? `<div class="pg-median"><span class="pg-median-num">${g.medianLabel}</span><span class="pg-median-lab">mediana esperada por el modelo</span></div>` : ""}
+    <p class="reg-note">Probabilidad por orden de magnitud de muertes (${g.event}). No es un recuento: es lo que el modelo del USGS espera dada la magnitud y la población expuesta.</p>
     <div class="pg-bars">${bars}</div>
     <p class="pg-note">${g.note} <a href="${g.url}" target="_blank" rel="noopener">Ver en USGS ↗</a></p>
-  </section>`;
+  </div>`;
 }
 
 // ---- Pestañas ----
