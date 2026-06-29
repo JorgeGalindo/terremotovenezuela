@@ -1,0 +1,13 @@
+{
+  "name": "terremotovenezuela",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Microsite que cuantifica la afectación del terremoto de Venezuela (24-jun-2026) con datos de Copernicus EMS (EMSR884) + capas adicionales.",
+  "scripts": {
+    "dev": "python3 -m http.server 5175",
+    "fetch:copernicus": "node scripts/fetch-emsr884.mjs",
+    "fetch:buildings": "node scripts/fetch-buildings.mjs",
+    "fetch:all": "npm run fetch:copernicus && npm run fetch:buildings"
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terremoto de Venezuela · 24-jun-2026 — Afectación según Copernicus</title>
+  <meta name="description" content="Cuantificación de la afectación del terremoto de Venezuela (24-jun-2026) a partir de los datos satelitales de Copernicus EMS (activación EMSR884)." />
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="kicker">// Copernicus EMS · Activación EMSR884</p>
+    <h1>Terremoto de Venezuela</h1>
+    <p class="sub">Sismo doble <strong>Mw 7,2 + 7,5</strong> · 24 de junio de 2026 · norte de Venezuela.<br />
+    Lo que la observación satelital ha podido cuantificar hasta ahora.</p>
+  </header>
+
+  <section class="totals" id="totals" aria-label="Totales de daño">
+    <!-- contadores inyectados por JS -->
+  </section>
+  <p class="totals-note" id="totals-note"></p>
+
+  <section class="map-wrap">
+    <div id="map"></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <section class="aois">
+    <h2>// Daño por zona</h2>
+    <p class="aois-intro">Copernicus recortó 13 zonas (AOIs); estas son las que ya tienen producto de evaluación. Pulsa una para verla en el mapa.</p>
+    <div class="aoi-grid" id="aoi-grid"></div>
+  </section>
+
+  <footer class="foot">
+    <p><strong>Fuente:</strong> <a href="https://mapping.emergency.copernicus.eu/activations/EMSR884/" target="_blank" rel="noopener">Copernicus EMS Rapid Mapping — EMSR884</a>. Datos satelitales (Sentinel-1, Pléiades Neo, WorldView-3, Legion).</p>
+    <p class="disclaimer">El daño es una <strong>estimación-proxy</strong> derivada de imagen satelital, no verdad de campo. La capa solo recoge edificios afectados, no el parque completo. Cobertura parcial: 6 de 13 zonas tienen producto. <span id="updated"></span></p>
+    <p class="next">Próximas capas: víctimas y desaparecidos, exposición sísmica (GDACS/USGS), infraestructura crítica.</p>
+  </footer>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

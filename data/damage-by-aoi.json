@@ -1,0 +1,94 @@
+{
+  "meta": {
+    "code": "EMSR884",
+    "fetchedAt": "2026-06-29T09:09:25.347Z",
+    "gradeOrder": [
+      "Destroyed",
+      "Damaged",
+      "Possibly damaged",
+      "Negligible to slight damage",
+      "Not Applicable"
+    ],
+    "note": "Conteos edificio a edificio del campo `damage_gra` (Grading). 'affected' = todo lo distinto de Not Applicable."
+  },
+  "totals": {
+    "Destroyed": 436,
+    "Damaged": 399,
+    "Possibly damaged": 471
+  },
+  "aois": [
+    {
+      "aoi": "Caracas",
+      "aoiNumber": 2,
+      "layer": "EMSR884_AOI02_GRA_MONIT01_builtUpP_v1_VT",
+      "slug": "caracas",
+      "buildings": 20,
+      "byGrade": {
+        "Destroyed": 3,
+        "Possibly damaged": 17
+      },
+      "byType": {
+        "Unclassified": 20
+      }
+    },
+    {
+      "aoi": "Santa Cruz",
+      "aoiNumber": 5,
+      "layer": "EMSR884_AOI05_GRA_PRODUCT_builtUpP_v1_VT",
+      "slug": "santa-cruz",
+      "buildings": 3,
+      "byGrade": {
+        "Destroyed": 3
+      },
+      "byType": {
+        "Residential": 3
+      }
+    },
+    {
+      "aoi": "Moron",
+      "aoiNumber": 6,
+      "layer": "EMSR884_AOI06_GRA_MONIT01_builtUpP_v1_VT",
+      "slug": "moron",
+      "buildings": 96,
+      "byGrade": {
+        "Destroyed": 8,
+        "Damaged": 39,
+        "Possibly damaged": 49
+      },
+      "byType": {
+        "Unclassified": 96
+      }
+    },
+    {
+      "aoi": "San Felipe",
+      "aoiNumber": 8,
+      "layer": "EMSR884_AOI08_GRA_MONIT01_builtUpP_v1_VT",
+      "slug": "san-felipe",
+      "buildings": 183,
+      "byGrade": {
+        "Damaged": 14,
+        "Possibly damaged": 169
+      },
+      "byType": {
+        "Residential": 183
+      }
+    },
+    {
+      "aoi": "Caraballeda",
+      "aoiNumber": 12,
+      "layer": "EMSR884_AOI12_GRA_MONIT01_builtUpP_v1_VT",
+      "slug": "caraballeda",
+      "buildings": 1004,
+      "byGrade": {
+        "Destroyed": 422,
+        "Damaged": 346,
+        "Possibly damaged": 236
+      },
+      "byType": {
+        "Residential": 70,
+        "Unclassified": 753,
+        "Not Applicable": 181
+      }
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+{
+  "meta": {
+    "code": "EMSR884",
+    "name": "Earthquake in Venezuela",
+    "reason": "On 24 Jun 2026 22:05 UTC a 7.5M earthquake, preceded by a strong foreshock, occurred in Venezuela. The impact on population is deemed high at this stage, with low visibility on the extent of the damage. Copernicus EMS Rapid Mapping is requested to provide damage assessment emergency mapping.",
+    "category": "Earthquake / Ground shaking",
+    "activator": "EC Services|DG ECHO",
+    "eventTime": "2026-06-24T16:04:00",
+    "activationTime": "2026-06-25T03:51:00",
+    "gdacsId": "EQ1548377",
+    "charterNumber": "1036",
+    "reportLink": "https://storymaps.arcgis.com/stories/717d0c07ec434b54ab6b2e0bbd7bc9f6",
+    "closed": false,
+    "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
+    "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
+    "fetchedAt": "2026-06-29T07:26:26.372Z",
+    "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
+  },
+  "totals": {
+    "aois": 13,
+    "delivered": 6,
+    "notFeasible": 7,
+    "identifiedBuildings": 1306
+  },
+  "aois": [
+    {
+      "name": "Central Coastal Venezuela",
+      "number": 0,
+      "status": "delivered",
+      "population": null,
+      "lastDelivery": "2026-06-26T14:50:11.319814",
+      "products": [
+        {
+          "type": "GRM",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-28T10:50:00",
+          "deliveryTime": "2026-06-26T14:50:11.319814",
+          "mapsCount": 1,
+          "sensors": [
+            "Sentinel-1"
+          ],
+          "lastImageAcquisition": "2026-06-25T22:42:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Petare",
+      "number": 1,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-28T00:13:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-27T13:48:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Caracas",
+      "number": 2,
+      "status": "delivered",
+      "population": 980000,
+      "lastDelivery": "2026-06-27T11:50:51.615047",
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-26T05:00:00",
+          "deliveryTime": "2026-06-26T04:01:10.948274",
+          "mapsCount": 1,
+          "sensors": [
+            "Pleiades Neo"
+          ],
+          "lastImageAcquisition": "2026-06-25T14:59:00",
+          "population": 980000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Office buildings",
+              "unit": "ha",
+              "total": 365.4,
+              "affected": 3.6
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "ha",
+              "total": 5523.9,
+              "affected": 23
+            }
+          ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-27T07:07:00",
+          "deliveryTime": "2026-06-27T11:50:51.615047",
+          "mapsCount": 2,
+          "sensors": [
+            "Pleiades Neo"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:19:00",
+          "population": 980000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Unclassified",
+              "unit": "",
+              "total": 119380,
+              "affected": 20
+            },
+            {
+              "category": "Transportation",
+              "subclass": "Local Road",
+              "unit": "km",
+              "total": 902.9,
+              "affected": 0.1
+            },
+            {
+              "category": "Blocked road / interruption",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Antimano",
+      "number": 3,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-26T02:32:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-25T15:17:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Maracay",
+      "number": 4,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-28T17:46:00",
+          "mapsCount": 0,
+          "sensors": [
+            "WorldView-3"
+          ],
+          "lastImageAcquisition": "2026-06-27T15:30:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Santa Cruz",
+      "number": 5,
+      "status": "delivered",
+      "population": 480000,
+      "lastDelivery": "2026-06-27T23:49:49.849118",
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-28T01:00:00",
+          "deliveryTime": "2026-06-27T23:49:49.849118",
+          "mapsCount": 2,
+          "sensors": [
+            "WorldView-3"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:10:00",
+          "population": 480000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "",
+              "total": 144654,
+              "affected": 3
+            }
+          ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-28T16:31:00",
+          "mapsCount": 0,
+          "sensors": [
+            "WorldView-3"
+          ],
+          "lastImageAcquisition": "2026-06-27T15:30:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Moron",
+      "number": 6,
+      "status": "delivered",
+      "population": 42000,
+      "lastDelivery": "2026-06-27T01:30:30.633886",
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-27T02:15:00",
+          "deliveryTime": "2026-06-27T01:30:30.633886",
+          "mapsCount": 1,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:11:00",
+          "population": 34000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Unclassified",
+              "unit": "",
+              "total": 18700,
+              "affected": 96
+            }
+          ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-26T08:38:00",
+          "deliveryTime": "2026-06-26T07:24:29.440918",
+          "mapsCount": 1,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-25T20:36:00",
+          "population": 42000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Industrial buildings",
+              "unit": "ha",
+              "total": 51.4,
+              "affected": 8.8
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "ha",
+              "total": 902,
+              "affected": 179.4
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Industrial buildings and warehouses",
+              "unit": "ha",
+              "total": 59.5,
+              "affected": 15.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Puerto Cabello",
+      "number": 7,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-27T00:48:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T14:03:00",
+          "population": null,
+          "stats": []
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-27T21:26:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-27T15:16:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "San Felipe",
+      "number": 8,
+      "status": "delivered",
+      "population": 310000,
+      "lastDelivery": "2026-06-27T17:21:41.091466",
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-26T12:50:00",
+          "deliveryTime": "2026-06-26T17:38:03.884275",
+          "mapsCount": 3,
+          "sensors": [
+            "Legion",
+            "Pleiades Neo"
+          ],
+          "lastImageAcquisition": "2026-06-25T20:37:00",
+          "population": 310000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "ha",
+              "total": 3569,
+              "affected": 78.9
+            }
+          ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-27T14:18:00",
+          "deliveryTime": "2026-06-27T17:21:41.091466",
+          "mapsCount": 3,
+          "sensors": [
+            "Pleiades Neo",
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T20:20:00",
+          "population": 310000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "",
+              "total": 89625,
+              "affected": 183
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Valencia",
+      "number": 9,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-27T00:06:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T14:04:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Guacara",
+      "number": 10,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-26T01:00:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Pleiades Neo"
+          ],
+          "lastImageAcquisition": "2026-06-25T14:59:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Villa de Cura",
+      "number": 11,
+      "status": "not_feasible",
+      "population": null,
+      "lastDelivery": null,
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "not_feasible",
+          "statusReason": "Because of remote sensing limitations",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-06-26T23:29:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Pleiades Neo"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:19:00",
+          "population": null,
+          "stats": []
+        }
+      ]
+    },
+    {
+      "name": "Caraballeda",
+      "number": 12,
+      "status": "delivered",
+      "population": 330000,
+      "lastDelivery": "2026-06-27T19:54:43.077956",
+      "products": [
+        {
+          "type": "GRA",
+          "monitoring": false,
+          "monitoringNumber": 0,
+          "status": "delivered",
+          "statusReason": "Correction of the Built Up Grading layer",
+          "versionNumber": 2,
+          "expectedDelivery": "2026-06-27T03:33:00",
+          "deliveryTime": "2026-06-27T19:54:43.077956",
+          "mapsCount": 4,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:10:00",
+          "population": 330000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "ha",
+              "total": 550.9,
+              "affected": 550.9
+            },
+            {
+              "category": "Transportation",
+              "subclass": "Airfield runways",
+              "unit": "ha",
+              "total": 601.3,
+              "affected": 601.3
+            }
+          ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 1,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-06-27T20:10:00",
+          "deliveryTime": "2026-06-27T18:17:36.339574",
+          "mapsCount": 7,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-06-26T15:10:00",
+          "population": 330000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Unclassified",
+              "unit": "",
+              "total": 60596,
+              "affected": 753
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "",
+              "total": 70,
+              "affected": 70
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Other non-residential buildings",
+              "unit": "",
+              "total": 181,
+              "affected": 181
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Power plant constructions",
+              "unit": "ha",
+              "total": 13.1,
+              "affected": 13.1
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Sport and recreation constructions",
+              "unit": "ha",
+              "total": 25.9,
+              "affected": 6.1
+            },
+            {
+              "category": "Transportation",
+              "subclass": "Airfield runways",
+              "unit": "ha",
+              "total": 601.3,
+              "affected": 601.3
+            },
+            {
+              "category": "Blocked road / interruption",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 103
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

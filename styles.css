@@ -1,0 +1,148 @@
+:root {
+  --paper: #f4f1ea;
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --line: #d8d2c4;
+  --destroyed: #b2182b;
+  --damaged: #f46d43;
+  --possibly: #fdae61;
+  --accent: #1a1a1a;
+  --mono: ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+.kicker, .aois h2, .aois-intro, .totals-note {
+  font-family: var(--mono);
+}
+
+/* ---- Hero ---- */
+.hero {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 64px 24px 24px;
+}
+.kicker {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.02;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+.hero .sub { font-size: 1.1rem; color: #333; margin: 0; max-width: 640px; }
+
+/* ---- Totals ---- */
+.totals {
+  max-width: 920px;
+  margin: 24px auto 0;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.stat {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 18px 16px;
+  border-radius: 4px;
+}
+.stat .num { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; line-height: 1; letter-spacing: -0.02em; }
+.stat .lab { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+.stat .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: baseline; }
+.stat.destroyed .dot { background: var(--destroyed); }
+.stat.damaged .dot { background: var(--damaged); }
+.stat.possibly .dot { background: var(--possibly); }
+.stat.total { background: var(--ink); color: #fff; }
+.stat.total .lab { color: #bbb; }
+
+.totals-note {
+  max-width: 920px;
+  margin: 14px auto 0;
+  padding: 0 24px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* ---- Map ---- */
+.map-wrap {
+  position: relative;
+  max-width: 1180px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+#map {
+  height: 70vh;
+  min-height: 460px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.legend {
+  position: absolute;
+  bottom: 16px;
+  left: 40px;
+  background: rgba(255,255,255,0.94);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  font-family: var(--mono);
+}
+.legend .row { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
+.legend .sw { width: 12px; height: 12px; border-radius: 2px; }
+
+/* ---- AOIs ---- */
+.aois { max-width: 920px; margin: 56px auto; padding: 0 24px; }
+.aois h2 { font-size: 1rem; color: var(--muted); margin: 0 0 6px; font-weight: 500; }
+.aois-intro { color: var(--muted); font-size: 0.85rem; margin: 0 0 20px; }
+.aoi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.aoi-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.1s;
+}
+.aoi-card:hover { border-color: var(--ink); transform: translateY(-2px); }
+.aoi-card h3 { margin: 0 0 4px; font-size: 1.05rem; }
+.aoi-card .pop { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); margin-bottom: 12px; }
+.aoi-card .total-b { font-size: 1.6rem; font-weight: 700; }
+.aoi-card .total-b span { font-size: 0.75rem; font-weight: 400; color: var(--muted); font-family: var(--mono); }
+.bar { display: flex; height: 8px; border-radius: 2px; overflow: hidden; margin-top: 10px; background: var(--line); }
+.bar i { display: block; height: 100%; }
+
+/* ---- Footer ---- */
+.foot {
+  max-width: 920px;
+  margin: 64px auto 80px;
+  padding: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.foot a { color: var(--ink); }
+.foot .disclaimer { font-size: 0.8rem; }
+.foot .next { font-family: var(--mono); font-size: 0.78rem; margin-top: 16px; }
+
+.maplibregl-popup-content { font-family: var(--sans); font-size: 0.85rem; }
+.maplibregl-popup-content .pg { font-family: var(--mono); font-weight: 700; }
+
+@media (max-width: 640px) {
+  .totals { grid-template-columns: repeat(2, 1fr); }
+  .legend { left: 32px; }
+}
