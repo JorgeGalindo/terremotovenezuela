@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-06-29",
+    "updated": "2026-06-30",
     "note": "Comparativa entre cifras OFICIALES del gobierno venezolano (conservadoras, solo registros hospitalarios) y ESTIMACIONES INDEPENDIENTES (ONU/OCHA y registros ciudadanos). El gobierno confirma muertes pero no da cifra de desaparecidos; las estimaciones independientes apuntan a una magnitud mucho mayor."
   },
   "official": {
@@ -11,14 +11,14 @@
       {
         "key": "deaths",
         "label": "Muertes confirmadas",
-        "value": 1450,
+        "value": 1719,
         "approx": true,
         "highlight": true
       },
       {
         "key": "injured",
         "label": "Heridos",
-        "value": 3150,
+        "value": 5034,
         "approx": true
       },
       {
@@ -51,10 +51,10 @@
       },
       {
         "key": "missing_media",
-        "label": "Desaparecidos (Euronews)",
-        "value": 68000,
+        "label": "Desaparecidos (Proceso)",
+        "value": 46632,
         "approx": true,
-        "note": "Euronews, 28-jun-2026: más de 68.000 personas seguían sin localizar."
+        "note": "Proceso, 2026-06-30: 46.632 personas sin localizar."
       }
     ]
   },
@@ -63,17 +63,9 @@
     "note": "Plataformas creadas por voluntarios, sin supervisión oficial. No requieren cuenta y permiten reportes ilimitados, por lo que las cifras pueden incluir duplicados o casos ya resueltos. Aun así, son hoy la fuente más detallada de personas no localizadas.",
     "items": [
       {
-        "name": "SOS Venezuela 2026",
-        "url": "https://sosvenezuela2026.com/buscar",
-        "value": 43945,
-        "label": "desaparecidos",
-        "detail": "8.414 ya encontrados. Mapa colaborativo y directorio de personas.",
-        "date": "29-jun"
-      },
-      {
         "name": "Desaparecidos Terremoto Venezuela",
         "url": "https://desaparecidosterremotovenezuela.com/",
-        "value": 37380,
+        "value": 46632,
         "label": "sin contacto",
         "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.",
         "date": "26-jun"
@@ -90,10 +82,18 @@
       {
         "name": "Desaparecidos Venezuela",
         "url": "https://www.desaparecidosvenezuela.com/",
-        "value": 1318,
+        "value": 1323,
         "label": "aún buscados",
-        "detail": "1347 publicaciones · 8 localizados · 21 a salvo.",
+        "detail": "1353 publicaciones · 9 localizados · 21 a salvo.",
         "date": "28-jun"
+      },
+      {
+        "name": "SOS Venezuela 2026",
+        "url": "https://sosvenezuela2026.com/buscar",
+        "value": 0,
+        "label": "desaparecidos",
+        "detail": "8.414 ya encontrados. Mapa colaborativo y directorio de personas.",
+        "date": "29-jun"
       }
     ]
   },
@@ -134,6 +134,10 @@
       {
         "date": "28-jun",
         "value": 1450
+      },
+      {
+        "date": "06-30",
+        "value": 1719
       }
     ]
   },

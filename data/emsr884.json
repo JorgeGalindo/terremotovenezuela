@@ -13,7 +13,7 @@
     "closed": false,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-06-29T12:05:10.681Z",
+    "fetchedAt": "2026-06-30T08:56:38.911Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -28,17 +28,17 @@
       "number": 0,
       "status": "delivered",
       "population": null,
-      "lastDelivery": "2026-06-26T14:50:11.319814",
+      "lastDelivery": "2026-06-29T15:08:43.758312",
       "products": [
         {
           "type": "GRM",
           "monitoring": false,
           "monitoringNumber": 0,
           "status": "delivered",
-          "statusReason": null,
-          "versionNumber": 1,
+          "statusReason": "Reversing colour coding.\r\nImproved homogenisation of layer.",
+          "versionNumber": 2,
           "expectedDelivery": "2026-06-28T10:50:00",
-          "deliveryTime": "2026-06-26T14:50:11.319814",
+          "deliveryTime": "2026-06-29T15:08:43.758312",
           "mapsCount": 1,
           "sensors": [
             "Sentinel-1"
@@ -80,7 +80,7 @@
       "number": 2,
       "status": "delivered",
       "population": 980000,
-      "lastDelivery": "2026-06-27T11:50:51.615047",
+      "lastDelivery": "2026-06-29T18:18:07.700477",
       "products": [
         {
           "type": "GRA",
@@ -119,10 +119,10 @@
           "monitoring": true,
           "monitoringNumber": 1,
           "status": "delivered",
-          "statusReason": null,
-          "versionNumber": 1,
+          "statusReason": "Correction of the legend (in the map)",
+          "versionNumber": 2,
           "expectedDelivery": "2026-06-27T07:07:00",
-          "deliveryTime": "2026-06-27T11:50:51.615047",
+          "deliveryTime": "2026-06-29T18:18:07.700477",
           "mapsCount": 2,
           "sensors": [
             "Pleiades Neo"
@@ -379,7 +379,7 @@
       "number": 8,
       "status": "delivered",
       "population": 310000,
-      "lastDelivery": "2026-06-27T17:21:41.091466",
+      "lastDelivery": "2026-06-29T17:28:21.981067",
       "products": [
         {
           "type": "GRA",
@@ -412,10 +412,10 @@
           "monitoring": true,
           "monitoringNumber": 1,
           "status": "delivered",
-          "statusReason": null,
-          "versionNumber": 1,
+          "statusReason": "transportation line layer.",
+          "versionNumber": 2,
           "expectedDelivery": "2026-06-27T14:18:00",
-          "deliveryTime": "2026-06-27T17:21:41.091466",
+          "deliveryTime": "2026-06-29T17:28:21.981067",
           "mapsCount": 3,
           "sensors": [
             "Pleiades Neo",
