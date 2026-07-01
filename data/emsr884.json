@@ -13,14 +13,14 @@
     "closed": false,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-06-30T08:56:38.911Z",
+    "fetchedAt": "2026-07-01T09:29:19.326Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
     "aois": 13,
     "delivered": 6,
     "notFeasible": 7,
-    "identifiedBuildings": 1306
+    "identifiedBuildings": 1655
   },
   "aois": [
     {
@@ -28,17 +28,17 @@
       "number": 0,
       "status": "delivered",
       "population": null,
-      "lastDelivery": "2026-06-29T15:08:43.758312",
+      "lastDelivery": "2026-06-26T14:50:11.319814",
       "products": [
         {
           "type": "GRM",
           "monitoring": false,
           "monitoringNumber": 0,
           "status": "delivered",
-          "statusReason": "Reversing colour coding.\r\nImproved homogenisation of layer.",
-          "versionNumber": 2,
+          "statusReason": null,
+          "versionNumber": 1,
           "expectedDelivery": "2026-06-28T10:50:00",
-          "deliveryTime": "2026-06-29T15:08:43.758312",
+          "deliveryTime": "2026-06-26T14:50:11.319814",
           "mapsCount": 1,
           "sensors": [
             "Sentinel-1"
@@ -518,7 +518,7 @@
       "number": 12,
       "status": "delivered",
       "population": 330000,
-      "lastDelivery": "2026-06-27T19:54:43.077956",
+      "lastDelivery": "2026-07-01T04:05:38",
       "products": [
         {
           "type": "GRA",
@@ -557,11 +557,11 @@
           "monitoring": true,
           "monitoringNumber": 1,
           "status": "delivered",
-          "statusReason": null,
-          "versionNumber": 1,
+          "statusReason": "Correction of the Observed Event layer and the Image Footprint layer",
+          "versionNumber": 2,
           "expectedDelivery": "2026-06-27T20:10:00",
-          "deliveryTime": "2026-06-27T18:17:36.339574",
-          "mapsCount": 7,
+          "deliveryTime": "2026-07-01T04:05:38",
+          "mapsCount": 6,
           "sensors": [
             "Legion"
           ],
@@ -573,21 +573,21 @@
               "subclass": "Unclassified",
               "unit": "",
               "total": 60596,
-              "affected": 753
+              "affected": 1093
             },
             {
               "category": "Built-up",
               "subclass": "Residential Buildings",
               "unit": "",
-              "total": 70,
-              "affected": 70
+              "total": 76,
+              "affected": 76
             },
             {
               "category": "Built-up",
               "subclass": "Other non-residential buildings",
               "unit": "",
-              "total": 181,
-              "affected": 181
+              "total": 185,
+              "affected": 184
             },
             {
               "category": "Facilities",
