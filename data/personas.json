@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-01",
+    "updated": "2026-07-02",
     "note": "Comparativa entre cifras OFICIALES del gobierno venezolano (conservadoras, solo registros hospitalarios) y ESTIMACIONES INDEPENDIENTES (ONU/OCHA y registros ciudadanos). El gobierno confirma muertes pero no da cifra de desaparecidos; las estimaciones independientes apuntan a una magnitud mucho mayor."
   },
   "official": {
@@ -11,14 +11,14 @@
       {
         "key": "deaths",
         "label": "Muertes confirmadas",
-        "value": 1943,
+        "value": 2295,
         "approx": true,
         "highlight": true
       },
       {
         "key": "injured",
         "label": "Heridos",
-        "value": 10571,
+        "value": 11267,
         "approx": true
       },
       {
@@ -31,7 +31,7 @@
       {
         "key": "displaced",
         "label": "Desplazados",
-        "value": 15866,
+        "value": 15000,
         "approx": true
       }
     ]
@@ -51,10 +51,10 @@
       },
       {
         "key": "missing_media",
-        "label": "Desaparecidos (El Universal)",
-        "value": 51000,
+        "label": "Desaparecidos (La República (Perú))",
+        "value": 61842,
         "approx": true,
-        "note": "El Universal, 2026-07-01: 51.000 personas sin localizar."
+        "note": "La República (Perú), 2026-07-02: 61.842 personas sin localizar."
       }
     ]
   },
@@ -63,28 +63,28 @@
     "note": "Plataformas creadas por voluntarios, sin supervisión oficial. No requieren cuenta y permiten reportes ilimitados, por lo que las cifras pueden incluir duplicados o casos ya resueltos. Aun así, son hoy la fuente más detallada de personas no localizadas.",
     "items": [
       {
-        "name": "Desaparecidos Terremoto Venezuela",
-        "url": "https://desaparecidosterremotovenezuela.com/",
-        "value": 50000,
-        "label": "sin contacto",
-        "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.",
-        "date": "26-jun"
-      },
-      {
         "name": "Venezuela Te Busca",
         "url": "https://venezuelatebusca.com/",
-        "value": 28040,
+        "value": 61842,
         "approx": true,
         "label": "reportes recibidos",
         "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.",
         "date": "27-jun"
       },
       {
+        "name": "Desaparecidos Terremoto Venezuela",
+        "url": "https://desaparecidosterremotovenezuela.com/",
+        "value": 43251,
+        "label": "sin contacto",
+        "detail": "40.223 registrados · 2.843 ya localizados. Usa reconocimiento facial para casar fotos.",
+        "date": "26-jun"
+      },
+      {
         "name": "Desaparecidos Venezuela",
         "url": "https://www.desaparecidosvenezuela.com/",
-        "value": 1340,
+        "value": 1345,
         "label": "aún buscados",
-        "detail": "1371 publicaciones · 9 localizados · 22 a salvo.",
+        "detail": "1376 publicaciones · 9 localizados · 22 a salvo.",
         "date": "28-jun"
       },
       {
@@ -142,6 +142,10 @@
       {
         "date": "07-01",
         "value": 1943
+      },
+      {
+        "date": "07-02",
+        "value": 2295
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
   "meta": {
     "code": "EMSR884",
-    "fetchedAt": "2026-07-01T09:29:22.750Z",
+    "fetchedAt": "2026-07-02T08:41:56.894Z",
     "gradeOrder": [
       "Destroyed",
       "Damaged",
@@ -12,9 +12,9 @@
     "note": "Conteos edificio a edificio del campo `damage_gra` (Grading). 'affected' = todo lo distinto de Not Applicable."
   },
   "totals": {
-    "Destroyed": 606,
-    "Damaged": 448,
-    "Possibly damaged": 601
+    "Destroyed": 695,
+    "Damaged": 828,
+    "Possibly damaged": 1549
   },
   "aois": [
     {
@@ -76,18 +76,18 @@
     {
       "aoi": "Caraballeda",
       "aoiNumber": 12,
-      "layer": "EMSR884_AOI12_GRA_MONIT01_builtUpP_v2_VT",
+      "layer": "EMSR884_AOI12_GRA_MONIT01_builtUpP_v3_VT",
       "slug": "caraballeda",
-      "buildings": 1353,
+      "buildings": 2770,
       "byGrade": {
-        "Destroyed": 592,
-        "Damaged": 395,
-        "Possibly damaged": 366
+        "Destroyed": 681,
+        "Damaged": 775,
+        "Possibly damaged": 1314
       },
       "byType": {
-        "Unclassified": 1093,
-        "Non residential": 184,
-        "Residential": 76
+        "Unclassified": 2339,
+        "Residential": 197,
+        "Non residential": 234
       }
     }
   ]
