@@ -2,7 +2,7 @@
   "meta": {
     "code": "EMSR884",
     "name": "Earthquake in Venezuela",
-    "reason": "On 24 Jun 2026 22:05 UTC a 7.5M earthquake, preceded by a strong foreshock, occurred in Venezuela. The impact on population is deemed high at this stage, with low visibility on the extent of the damage. Copernicus EMS Rapid Mapping is requested to provide damage assessment emergency mapping.",
+    "reason": "On 24 Jun 2026 22:05 UTC a 7.5M earthquake, preceded by a strong foreshock, occurred in Venezuela. The impact on population was deemed high at the beginning, with low visibility on the extent of the damage. This is why Copernicus EMS Rapid Mapping was requested to provide damage assessment emergency mapping.",
     "category": "Earthquake / Ground shaking",
     "activator": "EC Services|DG ECHO",
     "eventTime": "2026-06-24T16:04:00",
@@ -10,10 +10,10 @@
     "gdacsId": "EQ1548377",
     "charterNumber": "1036",
     "reportLink": "https://storymaps.arcgis.com/stories/717d0c07ec434b54ab6b2e0bbd7bc9f6",
-    "closed": false,
+    "closed": true,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-02T08:41:53.378Z",
+    "fetchedAt": "2026-07-03T08:49:12.910Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -392,8 +392,8 @@
           "deliveryTime": "2026-06-26T17:38:03.884275",
           "mapsCount": 3,
           "sensors": [
-            "Legion",
-            "Pleiades Neo"
+            "Pleiades Neo",
+            "Legion"
           ],
           "lastImageAcquisition": "2026-06-25T20:37:00",
           "population": 310000,
@@ -418,8 +418,8 @@
           "deliveryTime": "2026-06-29T17:28:21.981067",
           "mapsCount": 3,
           "sensors": [
-            "Pleiades Neo",
-            "Legion"
+            "Legion",
+            "Pleiades Neo"
           ],
           "lastImageAcquisition": "2026-06-26T20:20:00",
           "population": 310000,

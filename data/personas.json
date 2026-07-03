@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated": "2026-07-02",
+    "updated": "2026-07-03",
     "note": "Comparativa entre cifras OFICIALES del gobierno venezolano (conservadoras, solo registros hospitalarios) y ESTIMACIONES INDEPENDIENTES (ONU/OCHA y registros ciudadanos). El gobierno confirma muertes pero no da cifra de desaparecidos; las estimaciones independientes apuntan a una magnitud mucho mayor."
   },
   "official": {
@@ -31,7 +31,7 @@
       {
         "key": "displaced",
         "label": "Desplazados",
-        "value": 15000,
+        "value": 15866,
         "approx": true
       }
     ]
@@ -51,10 +51,10 @@
       },
       {
         "key": "missing_media",
-        "label": "Desaparecidos (La República (Perú))",
-        "value": 61842,
+        "label": "Desaparecidos (El Tiempo)",
+        "value": 250000,
         "approx": true,
-        "note": "La República (Perú), 2026-07-02: 61.842 personas sin localizar."
+        "note": "El Tiempo, 2026-07-03: 250.000 personas sin localizar."
       }
     ]
   },
@@ -62,15 +62,6 @@
     "label": "Registros ciudadanos de desaparecidos",
     "note": "Plataformas creadas por voluntarios, sin supervisión oficial. No requieren cuenta y permiten reportes ilimitados, por lo que las cifras pueden incluir duplicados o casos ya resueltos. Aun así, son hoy la fuente más detallada de personas no localizadas.",
     "items": [
-      {
-        "name": "Venezuela Te Busca",
-        "url": "https://venezuelatebusca.com/",
-        "value": 61842,
-        "approx": true,
-        "label": "reportes recibidos",
-        "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.",
-        "date": "27-jun"
-      },
       {
         "name": "Desaparecidos Terremoto Venezuela",
         "url": "https://desaparecidosterremotovenezuela.com/",
@@ -80,11 +71,20 @@
         "date": "26-jun"
       },
       {
+        "name": "Venezuela Te Busca",
+        "url": "https://venezuelatebusca.com/",
+        "value": 26962,
+        "approx": true,
+        "label": "reportes recibidos",
+        "detail": "Reporte y búsqueda por nombre, edad, género, foto y ubicación.",
+        "date": "27-jun"
+      },
+      {
         "name": "Desaparecidos Venezuela",
         "url": "https://www.desaparecidosvenezuela.com/",
-        "value": 1345,
+        "value": 1347,
         "label": "aún buscados",
-        "detail": "1376 publicaciones · 9 localizados · 22 a salvo.",
+        "detail": "1378 publicaciones · 9 localizados · 22 a salvo.",
         "date": "28-jun"
       },
       {
