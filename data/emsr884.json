@@ -13,7 +13,7 @@
     "closed": true,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-04T08:23:55.122Z",
+    "fetchedAt": "2026-07-05T08:40:17.859Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -117,23 +117,6 @@
         {
           "type": "GRA",
           "monitoring": true,
-          "monitoringNumber": 2,
-          "status": "W",
-          "statusReason": null,
-          "versionNumber": 1,
-          "expectedDelivery": "2026-07-05T07:20:00",
-          "deliveryTime": null,
-          "mapsCount": 0,
-          "sensors": [
-            "Legion"
-          ],
-          "lastImageAcquisition": "2026-07-04T15:20:00",
-          "population": null,
-          "stats": []
-        },
-        {
-          "type": "GRA",
-          "monitoring": true,
           "monitoringNumber": 1,
           "status": "delivered",
           "statusReason": "Correction of the legend (in the map)",
@@ -169,6 +152,23 @@
               "affected": 2
             }
           ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 2,
+          "status": "W",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-07-06T07:20:00",
+          "deliveryTime": null,
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-07-05T15:05:00",
+          "population": null,
+          "stats": []
         }
       ]
     },
@@ -405,13 +405,13 @@
           "status": "W",
           "statusReason": null,
           "versionNumber": 1,
-          "expectedDelivery": "2026-07-05T07:20:00",
+          "expectedDelivery": "2026-07-06T07:05:00",
           "deliveryTime": null,
           "mapsCount": 0,
           "sensors": [
             "Legion"
           ],
-          "lastImageAcquisition": "2026-07-04T15:20:00",
+          "lastImageAcquisition": "2026-07-05T15:05:00",
           "population": null,
           "stats": []
         },
@@ -561,13 +561,13 @@
           "status": "W",
           "statusReason": null,
           "versionNumber": 1,
-          "expectedDelivery": "2026-07-05T07:20:00",
+          "expectedDelivery": "2026-07-06T07:05:00",
           "deliveryTime": null,
           "mapsCount": 0,
           "sensors": [
             "Legion"
           ],
-          "lastImageAcquisition": "2026-07-04T15:20:00",
+          "lastImageAcquisition": "2026-07-05T15:05:00",
           "population": null,
           "stats": []
         },
