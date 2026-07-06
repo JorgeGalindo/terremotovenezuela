@@ -10,17 +10,17 @@
     "gdacsId": "EQ1548377",
     "charterNumber": "1036",
     "reportLink": "https://storymaps.arcgis.com/stories/717d0c07ec434b54ab6b2e0bbd7bc9f6",
-    "closed": true,
+    "closed": false,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-05T08:40:17.859Z",
+    "fetchedAt": "2026-07-06T09:55:57.873Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
     "aois": 13,
     "delivered": 6,
     "notFeasible": 7,
-    "identifiedBuildings": 3072
+    "identifiedBuildings": 3119
   },
   "aois": [
     {
@@ -402,16 +402,16 @@
           "type": "GRA",
           "monitoring": true,
           "monitoringNumber": 2,
-          "status": "W",
-          "statusReason": null,
+          "status": "not_feasible",
+          "statusReason": "Because of no change of situation detected",
           "versionNumber": 1,
-          "expectedDelivery": "2026-07-06T07:05:00",
-          "deliveryTime": null,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-07-06T00:48:00",
           "mapsCount": 0,
           "sensors": [
             "Legion"
           ],
-          "lastImageAcquisition": "2026-07-05T15:05:00",
+          "lastImageAcquisition": "2026-07-05T15:17:00",
           "population": null,
           "stats": []
         },
@@ -426,8 +426,8 @@
           "deliveryTime": "2026-06-26T17:38:03.884275",
           "mapsCount": 3,
           "sensors": [
-            "Legion",
-            "Pleiades Neo"
+            "Pleiades Neo",
+            "Legion"
           ],
           "lastImageAcquisition": "2026-06-25T20:37:00",
           "population": 310000,
@@ -552,22 +552,22 @@
       "number": 12,
       "status": "delivered",
       "population": 330000,
-      "lastDelivery": "2026-07-02T04:12:15.565161",
+      "lastDelivery": "2026-07-06T07:46:29.908321",
       "products": [
         {
           "type": "GRA",
           "monitoring": true,
-          "monitoringNumber": 2,
+          "monitoringNumber": 3,
           "status": "W",
           "statusReason": null,
           "versionNumber": 1,
-          "expectedDelivery": "2026-07-06T07:05:00",
+          "expectedDelivery": "2026-07-07T07:05:00",
           "deliveryTime": null,
           "mapsCount": 0,
           "sensors": [
-            "Legion"
+            "GeoEye-1"
           ],
-          "lastImageAcquisition": "2026-07-05T15:05:00",
+          "lastImageAcquisition": "2026-07-06T15:05:00",
           "population": null,
           "stats": []
         },
@@ -676,6 +676,23 @@
               "affected": 53
             }
           ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 2,
+          "status": "delivered",
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-07-06T06:21:00",
+          "deliveryTime": "2026-07-06T07:46:29.908321",
+          "mapsCount": 0,
+          "sensors": [
+            "GeoEye-1"
+          ],
+          "lastImageAcquisition": "2026-07-05T15:05:00",
+          "population": null,
+          "stats": []
         }
       ]
     }
