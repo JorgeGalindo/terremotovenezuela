@@ -13,7 +13,7 @@
     "closed": false,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-06T09:55:57.873Z",
+    "fetchedAt": "2026-07-07T09:23:36.390Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -28,24 +28,102 @@
       "number": 0,
       "status": "delivered",
       "population": null,
-      "lastDelivery": "2026-06-26T14:50:11.319814",
+      "lastDelivery": "2026-07-06T14:42:15.412962",
       "products": [
         {
           "type": "GRM",
           "monitoring": false,
           "monitoringNumber": 0,
           "status": "delivered",
-          "statusReason": "Correction of the legend (in the map)",
-          "versionNumber": 1,
+          "statusReason": "Correction of the symbology files (LYR/SLD)",
+          "versionNumber": 2,
           "expectedDelivery": "2026-06-28T10:50:00",
-          "deliveryTime": "2026-06-26T14:50:11.319814",
+          "deliveryTime": "2026-07-06T14:42:15.412962",
           "mapsCount": 1,
           "sensors": [
             "Sentinel-1"
           ],
           "lastImageAcquisition": "2026-06-25T22:42:00",
           "population": null,
-          "stats": []
+          "stats": [
+            {
+              "category": "Total",
+              "subclass": null,
+              "unit": "",
+              "total": 1677098,
+              "affected": 6415100
+            },
+            {
+              "category": "Details",
+              "subclass": "1",
+              "unit": "",
+              "total": 0,
+              "affected": 0
+            },
+            {
+              "category": "Details",
+              "subclass": "2",
+              "unit": "",
+              "total": 8198,
+              "affected": 200
+            },
+            {
+              "category": "Details",
+              "subclass": "3",
+              "unit": "",
+              "total": 34029,
+              "affected": 4900
+            },
+            {
+              "category": "Details",
+              "subclass": "4",
+              "unit": "",
+              "total": 51001,
+              "affected": 50000
+            },
+            {
+              "category": "Details",
+              "subclass": "5",
+              "unit": "",
+              "total": 81424,
+              "affected": 20000
+            },
+            {
+              "category": "Details",
+              "subclass": "6",
+              "unit": "",
+              "total": 410020,
+              "affected": 230000
+            },
+            {
+              "category": "Details",
+              "subclass": "7",
+              "unit": "",
+              "total": 309847,
+              "affected": 410000
+            },
+            {
+              "category": "Details",
+              "subclass": "8",
+              "unit": "",
+              "total": 390303,
+              "affected": 1900000
+            },
+            {
+              "category": "Details",
+              "subclass": "9",
+              "unit": "",
+              "total": 392272,
+              "affected": 3800000
+            },
+            {
+              "category": "Details",
+              "subclass": "10",
+              "unit": "",
+              "total": 0,
+              "affected": 0
+            }
+          ]
         }
       ]
     },
@@ -152,23 +230,6 @@
               "affected": 2
             }
           ]
-        },
-        {
-          "type": "GRA",
-          "monitoring": true,
-          "monitoringNumber": 2,
-          "status": "W",
-          "statusReason": null,
-          "versionNumber": 1,
-          "expectedDelivery": "2026-07-06T07:20:00",
-          "deliveryTime": null,
-          "mapsCount": 0,
-          "sensors": [
-            "Legion"
-          ],
-          "lastImageAcquisition": "2026-07-05T15:05:00",
-          "population": null,
-          "stats": []
         }
       ]
     },
@@ -551,26 +612,9 @@
       "name": "Caraballeda",
       "number": 12,
       "status": "delivered",
-      "population": 330000,
+      "population": 350000,
       "lastDelivery": "2026-07-06T07:46:29.908321",
       "products": [
-        {
-          "type": "GRA",
-          "monitoring": true,
-          "monitoringNumber": 3,
-          "status": "W",
-          "statusReason": null,
-          "versionNumber": 1,
-          "expectedDelivery": "2026-07-07T07:05:00",
-          "deliveryTime": null,
-          "mapsCount": 0,
-          "sensors": [
-            "GeoEye-1"
-          ],
-          "lastImageAcquisition": "2026-07-06T15:05:00",
-          "population": null,
-          "stats": []
-        },
         {
           "type": "GRA",
           "monitoring": false,
@@ -686,13 +730,70 @@
           "versionNumber": 1,
           "expectedDelivery": "2026-07-06T06:21:00",
           "deliveryTime": "2026-07-06T07:46:29.908321",
-          "mapsCount": 0,
+          "mapsCount": 9,
           "sensors": [
             "GeoEye-1"
           ],
           "lastImageAcquisition": "2026-07-05T15:05:00",
-          "population": null,
-          "stats": []
+          "population": 350000,
+          "stats": [
+            {
+              "category": "Built-up",
+              "subclass": "Unclassified",
+              "unit": "",
+              "total": 67348,
+              "affected": 2374
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Residential Buildings",
+              "unit": "",
+              "total": 198,
+              "affected": 197
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Other non-residential buildings",
+              "unit": "",
+              "total": 247,
+              "affected": 246
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Power plant constructions",
+              "unit": "ha",
+              "total": 13.1,
+              "affected": 13.1
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Sport and recreation constructions",
+              "unit": "ha",
+              "total": 37.2,
+              "affected": 6.1
+            },
+            {
+              "category": "Temporary camp",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 35
+            },
+            {
+              "category": "Transportation",
+              "subclass": "Airfield runways",
+              "unit": "ha",
+              "total": 601.3,
+              "affected": 601.3
+            },
+            {
+              "category": "Blocked road / interruption",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 53
+            }
+          ]
         }
       ]
     }
