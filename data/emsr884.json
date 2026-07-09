@@ -13,7 +13,7 @@
     "closed": false,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-08T08:07:53.304Z",
+    "fetchedAt": "2026-07-09T09:21:22.452Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
