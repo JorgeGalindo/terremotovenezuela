@@ -10,10 +10,10 @@
     "gdacsId": "EQ1548377",
     "charterNumber": "1036",
     "reportLink": "https://storymaps.arcgis.com/stories/717d0c07ec434b54ab6b2e0bbd7bc9f6",
-    "closed": false,
+    "closed": true,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-07-10T09:18:25.807Z",
+    "fetchedAt": "2026-07-11T07:40:04.744Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -461,23 +461,6 @@
       "products": [
         {
           "type": "GRA",
-          "monitoring": true,
-          "monitoringNumber": 2,
-          "status": "not_feasible",
-          "statusReason": "Because of no change of situation detected",
-          "versionNumber": 1,
-          "expectedDelivery": null,
-          "deliveryTime": "2026-07-06T00:48:00",
-          "mapsCount": 0,
-          "sensors": [
-            "Legion"
-          ],
-          "lastImageAcquisition": "2026-07-05T15:17:00",
-          "population": null,
-          "stats": []
-        },
-        {
-          "type": "GRA",
           "monitoring": false,
           "monitoringNumber": 0,
           "status": "delivered",
@@ -527,6 +510,23 @@
               "affected": 183
             }
           ]
+        },
+        {
+          "type": "GRA",
+          "monitoring": true,
+          "monitoringNumber": 2,
+          "status": "not_feasible",
+          "statusReason": "Because of no change of situation detected",
+          "versionNumber": 1,
+          "expectedDelivery": null,
+          "deliveryTime": "2026-07-06T00:48:00",
+          "mapsCount": 0,
+          "sensors": [
+            "Legion"
+          ],
+          "lastImageAcquisition": "2026-07-05T15:17:00",
+          "population": null,
+          "stats": []
         }
       ]
     },
@@ -617,26 +617,61 @@
       "products": [
         {
           "type": "GRA",
-          "monitoring": false,
-          "monitoringNumber": 0,
+          "monitoring": true,
+          "monitoringNumber": 2,
           "status": "delivered",
-          "statusReason": "Correction of the Built Up Grading layer",
-          "versionNumber": 2,
-          "expectedDelivery": "2026-06-27T03:33:00",
-          "deliveryTime": "2026-06-27T19:54:43.077956",
-          "mapsCount": 4,
+          "statusReason": null,
+          "versionNumber": 1,
+          "expectedDelivery": "2026-07-06T06:21:00",
+          "deliveryTime": "2026-07-06T07:46:29.908321",
+          "mapsCount": 9,
           "sensors": [
-            "Legion"
+            "GeoEye-1"
           ],
-          "lastImageAcquisition": "2026-06-26T15:10:00",
-          "population": 330000,
+          "lastImageAcquisition": "2026-07-05T15:05:00",
+          "population": 350000,
           "stats": [
             {
               "category": "Built-up",
+              "subclass": "Unclassified",
+              "unit": "",
+              "total": 67348,
+              "affected": 2374
+            },
+            {
+              "category": "Built-up",
               "subclass": "Residential Buildings",
+              "unit": "",
+              "total": 198,
+              "affected": 197
+            },
+            {
+              "category": "Built-up",
+              "subclass": "Other non-residential buildings",
+              "unit": "",
+              "total": 247,
+              "affected": 246
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Power plant constructions",
               "unit": "ha",
-              "total": 550.9,
-              "affected": 550.9
+              "total": 13.1,
+              "affected": 13.1
+            },
+            {
+              "category": "Facilities",
+              "subclass": "Sport and recreation constructions",
+              "unit": "ha",
+              "total": 37.2,
+              "affected": 6.1
+            },
+            {
+              "category": "Temporary camp",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 35
             },
             {
               "category": "Transportation",
@@ -644,6 +679,13 @@
               "unit": "ha",
               "total": 601.3,
               "affected": 601.3
+            },
+            {
+              "category": "Blocked road / interruption",
+              "subclass": null,
+              "unit": "count",
+              "total": "NA",
+              "affected": 53
             }
           ]
         },
@@ -723,61 +765,26 @@
         },
         {
           "type": "GRA",
-          "monitoring": true,
-          "monitoringNumber": 2,
+          "monitoring": false,
+          "monitoringNumber": 0,
           "status": "delivered",
-          "statusReason": null,
-          "versionNumber": 1,
-          "expectedDelivery": "2026-07-06T06:21:00",
-          "deliveryTime": "2026-07-06T07:46:29.908321",
-          "mapsCount": 9,
+          "statusReason": "Correction of the Built Up Grading layer",
+          "versionNumber": 2,
+          "expectedDelivery": "2026-06-27T03:33:00",
+          "deliveryTime": "2026-06-27T19:54:43.077956",
+          "mapsCount": 4,
           "sensors": [
-            "GeoEye-1"
+            "Legion"
           ],
-          "lastImageAcquisition": "2026-07-05T15:05:00",
-          "population": 350000,
+          "lastImageAcquisition": "2026-06-26T15:10:00",
+          "population": 330000,
           "stats": [
             {
               "category": "Built-up",
-              "subclass": "Unclassified",
-              "unit": "",
-              "total": 67348,
-              "affected": 2374
-            },
-            {
-              "category": "Built-up",
               "subclass": "Residential Buildings",
-              "unit": "",
-              "total": 198,
-              "affected": 197
-            },
-            {
-              "category": "Built-up",
-              "subclass": "Other non-residential buildings",
-              "unit": "",
-              "total": 247,
-              "affected": 246
-            },
-            {
-              "category": "Facilities",
-              "subclass": "Power plant constructions",
               "unit": "ha",
-              "total": 13.1,
-              "affected": 13.1
-            },
-            {
-              "category": "Facilities",
-              "subclass": "Sport and recreation constructions",
-              "unit": "ha",
-              "total": 37.2,
-              "affected": 6.1
-            },
-            {
-              "category": "Temporary camp",
-              "subclass": null,
-              "unit": "count",
-              "total": "NA",
-              "affected": 35
+              "total": 550.9,
+              "affected": 550.9
             },
             {
               "category": "Transportation",
@@ -785,13 +792,6 @@
               "unit": "ha",
               "total": 601.3,
               "affected": 601.3
-            },
-            {
-              "category": "Blocked road / interruption",
-              "subclass": null,
-              "unit": "count",
-              "total": "NA",
-              "affected": 53
             }
           ]
         }
