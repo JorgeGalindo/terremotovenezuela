@@ -21,14 +21,9 @@ npm run fetch:buildings    # solo daño edificio a edificio + geojson
 ```
 
 ### Actualización automática
-Un **cron diario en GitHub Actions** ([`.github/workflows/update-data.yml`](.github/workflows/update-data.yml), 06:00 UTC) refresca todo y, si algo cambia, hace commit; la integración Git de Vercel **redesplega solo**. No depende de ninguna máquina local. Dos capas:
+Un **cron diario en GitHub Actions** ([`.github/workflows/update-data.yml`](.github/workflows/update-data.yml), 06:00 UTC) refresca los datos de **Copernicus** (`npm run fetch:all`: activación EMSR884 + daño edificio a edificio desde el backend público) y, si algo cambia, hace commit; la integración Git de Vercel **redesplega solo**. No depende de ninguna máquina local y no usa ninguna API de pago.
 
-1. **Copernicus (determinista)** — `npm run fetch:all` regenera la activación EMSR884 y el daño por edificio desde el backend público.
-2. **Personas** — `npm run update:personas` ([`scripts/update-personas.mjs`](scripts/update-personas.mjs)):
-   - **API determinista** donde existe: Desaparecidos Venezuela (`/api/stats`).
-   - **Claude Opus 4.8 + web_search** para el resto (muertes oficiales, heridos, desplazados, desaparecidos ONU/prensa, y los titulares de SOS Venezuela 2026 / Desaparecidos Terremoto Venezuela / Venezuela Te Busca). Devuelve JSON estricto que se parchea sobre `data/personas.json` sin tocar su estructura; si falla, deja el fichero intacto.
-
-> **Requisito:** añadir el secret **`ANTHROPIC_API_KEY`** en GitHub (Settings → Secrets and variables → Actions). Sin él, el paso de personas se omite y solo corre la capa de Copernicus.
+> **Descontinuado (ago-2026):** la capa de **personas** (`npm run update:personas`, [`scripts/update-personas.mjs`](scripts/update-personas.mjs)) usaba la **API de Anthropic** (Claude + `web_search`) y era el único componente de pago del proyecto. Se ha retirado del cron y el secret `ANTHROPIC_API_KEY` se ha borrado del repo. Las cifras de `data/personas.json` quedan **congeladas** en su último valor válido. El script sigue disponible para lanzarlo a mano: `ANTHROPIC_API_KEY=… npm run update:personas`.
 
 ## Stack
 Sitio **estático** (HTML/CSS/JS vanilla + **MapLibre GL** vía CDN + **OpenFreeMap**, sin API key), desplegado en **Vercel**. Mismo patrón que `tresmillonesweb`/`juanysabela`. Sin build step. Deploy: `vercel --prod`.

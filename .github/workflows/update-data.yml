@@ -1,8 +1,13 @@
 name: Actualizar datos
 
-# A diario: regenera los datos de Copernicus (EMSR884) y, si hay ANTHROPIC_API_KEY,
-# refresca también las cifras de personas (Claude + web search + APIs de registros).
+# A diario: regenera los datos de Copernicus (EMSR884).
 # Si algo cambia, hace commit; la integración Git de Vercel redesplega sola.
+#
+# DESCONTINUADO (ago-2026): el paso "personas" usaba la API de Anthropic (Claude
+# con web_search) y era el único componente de pago del proyecto. Se ha retirado
+# del cron y el secret ANTHROPIC_API_KEY se ha borrado del repo. El script sigue
+# en scripts/update-personas.mjs por si se quiere lanzar a mano con una key
+# propia (`ANTHROPIC_API_KEY=... npm run update:personas`), pero NO corre en CI.
 on:
   schedule:
     - cron: "0 6 * * *" # 06:00 UTC cada día
@@ -18,8 +23,6 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -32,10 +35,6 @@ jobs:
 
       - name: Regenerar datos Copernicus (EMSR884)
         run: npm run fetch:all
-
-      - name: Actualizar cifras de personas (Claude + APIs)
-        if: env.ANTHROPIC_API_KEY != ''
-        run: npm run update:personas
 
       - name: Commit y push si hay cambios
         run: |
