@@ -13,7 +13,7 @@
     "closed": true,
     "productsZip": "https://rapidmapping.emergency.copernicus.eu/backend/EMSR884/EMSR884_products.zip",
     "awsBucket": "https://rapidmapping-viewer.s3.eu-west-1.amazonaws.com",
-    "fetchedAt": "2026-08-11T06:47:36.124Z",
+    "fetchedAt": "2026-08-12T07:07:42.537Z",
     "source": "https://rapidmapping.emergency.copernicus.eu/backend/dashboard-api/public-activations/?code=EMSR884"
   },
   "totals": {
@@ -54,74 +54,74 @@
               "affected": 6415100
             },
             {
-              "category": "Details",
-              "subclass": "1",
+              "category": "> 0.5 m",
+              "subclass": null,
               "unit": "",
               "total": 0,
               "affected": 0
             },
             {
-              "category": "Details",
-              "subclass": "2",
+              "category": "< -0.5 m",
+              "subclass": null,
               "unit": "",
-              "total": 8198,
-              "affected": 200
+              "total": 0,
+              "affected": 0
             },
             {
-              "category": "Details",
-              "subclass": "3",
-              "unit": "",
-              "total": 34029,
-              "affected": 4900
-            },
-            {
-              "category": "Details",
-              "subclass": "4",
-              "unit": "",
-              "total": 51001,
-              "affected": 50000
-            },
-            {
-              "category": "Details",
-              "subclass": "5",
-              "unit": "",
-              "total": 81424,
-              "affected": 20000
-            },
-            {
-              "category": "Details",
-              "subclass": "6",
+              "category": "0 m to 0.05 m",
+              "subclass": null,
               "unit": "",
               "total": 410020,
               "affected": 230000
             },
             {
-              "category": "Details",
-              "subclass": "7",
+              "category": "-0.05 m to 0 m",
+              "subclass": null,
               "unit": "",
-              "total": 309847,
-              "affected": 410000
+              "total": 81424,
+              "affected": 20000
             },
             {
-              "category": "Details",
-              "subclass": "8",
+              "category": "0.1 m to 0.2 m",
+              "subclass": null,
               "unit": "",
               "total": 390303,
               "affected": 1900000
             },
             {
-              "category": "Details",
-              "subclass": "9",
+              "category": "0.2 m to 0.5 m",
+              "subclass": null,
               "unit": "",
               "total": 392272,
               "affected": 3800000
             },
             {
-              "category": "Details",
-              "subclass": "10",
+              "category": "0.05 m to 0.1 m",
+              "subclass": null,
               "unit": "",
-              "total": 0,
-              "affected": 0
+              "total": 309847,
+              "affected": 410000
+            },
+            {
+              "category": "-0.2 m to -0.1 m",
+              "subclass": null,
+              "unit": "",
+              "total": 34029,
+              "affected": 4900
+            },
+            {
+              "category": "-0.5 m to -0.2 m",
+              "subclass": null,
+              "unit": "",
+              "total": 8198,
+              "affected": 200
+            },
+            {
+              "category": "-0.1 m to -0.05 m",
+              "subclass": null,
+              "unit": "",
+              "total": 51001,
+              "affected": 50000
             }
           ]
         }
